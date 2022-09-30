@@ -10,9 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_30_201232) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_30_203748) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "players", force: :cascade do |t|
+    t.string "name"
+    t.integer "aubergine", default: 0
+    t.integer "jambon", default: 0
+    t.integer "olive", default: 0
+    t.integer "tomate", default: 0
+    t.integer "ananas", default: 0
+    t.integer "champi", default: 0
+    t.integer "chevre", default: 0
+    t.integer "salade", default: 0
+    t.integer "attaque", default: 0
+    t.integer "pv", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
