@@ -1,4 +1,15 @@
 class PlayersController < ApplicationController
+    GAME = {
+        aubergine:  [1, 1, 2, 2, 2, 2],
+        jambon:     [4, 4, 4, 5, 5, 6],
+        olive:      [1, 2, 3, 4, 5, 6],
+        tomate:     [0, 1, 1, 2, 2, 3],
+        ananas:     [0, 1, 0, 2, 0, 3],
+        champi:     [0, 0, 1, 0, 0, 1],
+        chevre:     [0, 1, 0, 1, 0, 1],
+        salade:     [0, 1, 1, 2, 2, 3]
+    }
+
     def create
         @player = Player.create
         redirect_to root_path(player: @player.id)
@@ -8,11 +19,16 @@ class PlayersController < ApplicationController
         stats = %w(aubergine jambon olive ananas champi chevre tomate salade attaque)
         @player = Player.find(params[:player])
         increment_ingredients
-
+        earn_salade
         render json: {player: @player}
     end
 
     private
+
+    def earn_salade
+        @player.pv += GAME[:salade][@player.salade]
+        @player.save
+    end
 
     def increment_ingredients
         @player.aubergine += params["aubergine"].to_i unless params["aubergine"] == ""
