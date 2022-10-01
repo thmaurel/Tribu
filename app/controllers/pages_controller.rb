@@ -13,6 +13,7 @@ class PagesController < ApplicationController
     @tuiles << ["", "", ""]
     @tuiles << ["", "", ""]
     @player = Player.new
+    @player = Player.find(params[:player]) if params[:player]
 
 
   end
@@ -26,5 +27,10 @@ class PagesController < ApplicationController
       format.html # Follow regular flow of Rails
       format.text { render partial: "tuile", locals: {tuile: tuile_finale, attaque: params["attaque"], miror: params["miror"]}, formats: [:html] }
     end
+  end
+
+  def start
+    @player = Player.create
+    redirect_to root_path(player: @player.id)
   end
 end

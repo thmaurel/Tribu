@@ -1,6 +1,9 @@
 <% if @player.id %>
-    <div class="container">
+    <div class="container" data-controller="play">
         <div class="d-flex my-4">
+            <div class="round me-4">
+                Round 1
+            </div>
             <div class="player">
                 <div class="couleur aubergine">
                     <div>1/1/1</div><div></div><div>2/1/1</div><div></div><div></div><div>2/2/2</div>
@@ -36,7 +39,7 @@
                 </div>
             </div>
             <div class="round-form text-center">
-                <%= form_with url: root_path, method: :get do %>
+                <%= form_with url: root_path, method: :get, data: {action: "submit->play#play"} do %>
                     <%= text_field_tag :aubergine, params[:aubergine], class: "form-control", placeholder: "aubergine" %>
                     <%= text_field_tag :jambon, params[:jambon], class: "form-control", placeholder: "jambon" %>
                     <%= text_field_tag :olive, params[:olive], class: "form-control", placeholder: "olive" %>
@@ -50,7 +53,17 @@
                 <% end %>
             </div>
             <div class="player-pv" style="background-image: url(<%= image_path("pv.jpg") %>)">
-            10
+                10
+            </div>
+            <div class="ms-4">
+                <div>aubergine: <%= @player.aubergine %></div>
+                <div>jambon: <%= @player.jambon %></div>
+                <div>olive: <%= @player.olive %></div>
+                <div>ananas: <%= @player.ananas %></div>
+                <div>champi: <%= @player.champi %></div>
+                <div>chevre: <%= @player.chevre %></div>
+                <div>tomate: <%= @player.tomate %></div>
+                <div>salade: <%= @player.salade %></div>
             </div>
         </div>
 
@@ -70,6 +83,10 @@
                 <% end %>
             </div>
         </div>
+    </div>
+<% else %>
+    <div class="container py-5">
+        <%= link_to "Start game", start_path, class: "btn btn-primary" %>
     </div>
 <% end %>
 
