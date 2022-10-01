@@ -14,7 +14,17 @@ class PagesController < ApplicationController
     @tuiles << ["", "", ""]
     @player = Player.new
     @player = Player.find(params[:player]) if params[:player]
-
+    @attributes = {
+      aubergine: @player.aubergine,
+      jambon: @player.jambon,
+      olive: @player.olive,
+      ananas: @player.ananas,
+      champi: @player.champi,
+      chevre: @player.chevre,
+      tomate: @player.tomate,
+      salade: @player.salade,
+      pv: @player.pv
+    }
 
   end
 

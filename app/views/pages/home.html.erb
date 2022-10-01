@@ -1,41 +1,41 @@
 <% if @player.id %>
-    <div class="container" data-controller="play">
+    <div class="container" data-controller="play" data-play-player-value="<%= @player.id%>" data-play-stats-value="<%= @attributes.to_json %>">
         <div class="d-flex my-4">
             <div class="round me-4">
-                Round 1
+                Round <span data-play-target="round">1</span>
             </div>
             <div class="player">
                 <div class="couleur aubergine">
                     <div>1/1/1</div><div></div><div>2/1/1</div><div></div><div></div><div>2/2/2</div>
-                    <span class="cube"></span>
+                    <span class="cube" data-play-target="cubeAubergine"></span>
                 </div>
                 <div class="couleur jambon">
                     <div>4</div><div></div><div></div><div>5</div><div></div><div>6</div>
-                    <span class="cube"></span>
+                    <span class="cube" data-play-target="cubeJambon"></span>
                 </div>
                 <div class="couleur olive">
                     <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
-                    <span class="cube"></span>
+                    <span class="cube" data-play-target="cubeOlive"></span>
                 </div>
                 <div class="couleur ananas">
                     <div></div><div>1</div><div></div><div>2</div><div></div><div>3</div>
-                    <span class="cube"></span>
+                    <span class="cube" data-play-target="cubeAnanas"></span>
                 </div>
                 <div class="couleur champi">
                     <div></div><div></div><div>1</div><div></div><div></div><div>1</div>
-                    <span class="cube"></span>
+                    <span class="cube" data-play-target="cubeChampi"></span>
                 </div>
                 <div class="couleur chevre">
                     <div></div><div>1</div><div></div><div>1</div><div></div><div>1</div>
-                    <span class="cube"></span>
+                    <span class="cube" data-play-target="cubeChevre"></span>
                 </div>
                 <div class="couleur tomate">
                     <div></div><div>1</div><div></div><div>2</div><div></div><div>3</div>
-                    <span class="cube"></span>
+                    <span class="cube" data-play-target="cubeTomate"></span>
                 </div>
                 <div class="couleur salade">
                     <div></div><div>1</div><div></div><div>2</div><div></div><div>3</div>
-                    <span class="cube"></span>
+                    <span class="cube" data-play-target="cubeSalade"></span>
                 </div>
             </div>
             <div class="round-form text-center">
@@ -52,7 +52,7 @@
                     <%= submit_tag "Jouer!", class: "form-submit" %>
                 <% end %>
             </div>
-            <div class="player-pv" style="background-image: url(<%= image_path("pv.jpg") %>)">
+            <div class="player-pv" style="background-image: url(<%= image_path("pv.jpg") %>)" data-play-target="pv">
                 10
             </div>
             <div class="ms-4">
