@@ -28,9 +28,4 @@ class PagesController < ApplicationController
       format.text { render partial: "tuile", locals: {tuile: tuile_finale, attaque: params["attaque"], miror: params["miror"]}, formats: [:html] }
     end
   end
-
-  def start
-    @player = Player.create
-    redirect_to root_path(player: @player.id)
-  end
 end

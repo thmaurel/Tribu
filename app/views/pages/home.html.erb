@@ -86,7 +86,7 @@
     </div>
 <% else %>
     <div class="container py-5">
-        <%= link_to "Start game", start_path, class: "btn btn-primary" %>
+        <%= link_to "Start game", players_path, data: {turbo_method: :post}, class: "btn btn-primary" %>
     </div>
 <% end %>
 
