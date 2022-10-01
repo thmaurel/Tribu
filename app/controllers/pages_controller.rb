@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  # skip_before_action :authenticate_user!, only: [ :home ]
 
   SIDES = ["aubergine", "jambon", "olive", "tomate", "ananas", "champi", "chevre", "salade", "white"]
   def home
@@ -9,6 +9,21 @@ class PagesController < ApplicationController
       tuile = []
       3.times {tuile << SIDES.sample}
       @tuiles << tuile
+    end
+    @tuiles << ["", "", ""]
+    @tuiles << ["", "", ""]
+
+
+  end
+
+  def rotate
+    tuile_init =  params["tuile"].split(",")
+    p "LA BOMBASSS"
+    p params["miror"]
+    tuile_finale = [tuile_init.last, tuile_init.first, tuile_init.second]
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "tuile", locals: {tuile: tuile_finale, attaque: params["attaque"], miror: params["miror"]}, formats: [:html] }
     end
   end
 end

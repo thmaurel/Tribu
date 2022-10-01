@@ -1,43 +1,24 @@
 <h1>Tribu</h1>
 
-<%= @tuiles %>
-
-<div class="main">
-	<% @tuiles.each do |tuile| %>
-		<div class="squares">
-			<div class="attaque"><%= rand(0..2) %></div>
-			<!-- ligne 1 -->
-			<div class="square"></div><div class="square"></div><div class="square"></div>
-
-			<div class="square <%= tuile.first %>-color1-top"></div><div class="square <%= tuile.second %>-color2-top"></div>
-
-			<div class="square"></div><div class="square"></div><div class="square"></div>
-
-			<!-- ligne 2 -->
-			<div class="square"></div><div class="square"></div>
-
-			<div class="square <%= tuile.first %>-color1-top"></div><div class="square <%= tuile.first %>-color1"></div>
-			<div class="square <%= tuile.second %>-color2"></div><div class="square <%= tuile.second %>-color2-top"></div>
-
-			<div class="square"></div><div class="square"></div>
-			<!-- ligne 3 -->
-			<div class="square"></div>
-
-			<div class="square <%= tuile.first %>-color1-top"></div><div class="square <%= tuile.first %>-color1"></div>
-
-			<div class="square"></div><div class="square"></div>	
-			
-			<div class="square <%= tuile.second %>-color2"></div><div class="square <%= tuile.second %>-color2-top"></div>
-
-			<div class="square"></div>
-			<!-- ligne 4 -->
-			<div class="square <%= tuile.first %>-color1-top"></div>
-			<div class="square <%= tuile.first %>-<%= tuile.last %>-left-corner"></div>
-			<div class="square <%= tuile.last %>-color3"></div><div class="square <%= tuile.last %>-color3"></div>	<div class="square <%= tuile.last %>-color3"></div><div class="square <%= tuile.last %>-color3"></div>
-			<div class="square <%= tuile.second %>-<%= tuile.last %>-right-corner"></div>
-			<div class="square <%= tuile.second %>-color2-top"></div>
-		</div>
-	<% end %>
+<div class="d-flex align-items-start">
+    <div class="text-center">
+        <h2>De côté</h2>
+        <div class="main" data-controller="hello">
+            <% @tuiles.each do |tuile| %>
+                <% attaque = rand(0..2) %>
+                <%= render "tuile", tuile: tuile, attaque: attaque, miror: "" %>
+            <% end %>
+        </div>
+    </div>
+    <div class="text-center">
+        <h2>En jeu</h2>
+        <div class="main" data-controller="hello">
+            <% [["", "", ""], ["", "", ""]].each do |tuile| %>
+                <% attaque = rand(0..2) %>
+                <%= render "tuile", tuile: tuile, attaque: attaque, miror: "" %>
+            <% end %>
+        </div>
+    </div>
 </div>
 
 <style>
@@ -50,28 +31,49 @@
 		top: 40%;
 		right: 44%;
 		font-size: 32px;
+        z-index: 100;
 	}
+
+    .attaque-toggle {
+        top: 20%;
+    }
 
 	.squares {
 		display:  grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 		grid-gap: 0px;
 		width: 160px;
-		position: relative;
 	}
+
+    .tuile-container {
+        position: relative;
+        height: 120px;
+    }
 	
 	.main {
-		display: flex;
+        display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 50px 0;
+        border: 1px solid black;
+        width:610px;
+        height: auto;
+        padding: 50px;
+        margin: 50px;
 	}
+
+    .rotate-btn {
+        position:absolute;
+        right:40%;
+        bottom:-30px;
+    }
+
+    .miror-btn {
+        position:absolute;
+        right:60%;
+        bottom:-30px;
+    }
+
+    .miror {
+        transform: rotate(180deg);
+    }
 </style>
-
-
-
-
-
-
-
-
-
-
-<% console %>
