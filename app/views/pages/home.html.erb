@@ -5,6 +5,7 @@
 <div class="main">
 	<% @tuiles.each do |tuile| %>
 		<div class="squares">
+			<div class="attaque"><%= rand(0..2) %></div>
 			<!-- ligne 1 -->
 			<div class="square"></div><div class="square"></div><div class="square"></div>
 
@@ -44,12 +45,19 @@
 		width: 20px;
 		height: 30px;
 	}
+	.attaque {
+		position: absolute;
+		top: 40%;
+		right: 44%;
+		font-size: 32px;
+	}
 
 	.squares {
 		display:  grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 		grid-gap: 0px;
 		width: 160px;
+		position: relative;
 	}
 	
 	.main {
