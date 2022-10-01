@@ -1,0 +1,859 @@
+body {
+	background-color: $back;
+}
+
+
+/*ANANAS*/
+.ananas-ananas-left-corner {
+	background: linear-gradient(to left top, $ananas 0%, $ananas 50%, $ananas 50%, $ananas 100%);
+}
+
+.ananas-ananas-right-corner {
+	background: linear-gradient(to right top, $ananas 0%, $ananas 50%, $ananas 50%, $ananas 100%);
+}
+
+.ananas-color1 {
+	background: linear-gradient(to left top, $back 0%, $back 50%, $ananas 50%, $ananas 100%);
+}
+.ananas-color1-top {
+	background: linear-gradient(to left top, $ananas 0%, $ananas 50%, $back 50%, $back 100%);
+}
+
+.ananas-color2 {
+	background: linear-gradient(to right top, $back 0%, $back 50%, $ananas 50%, $ananas 100%);
+}
+.ananas-color2-top {
+	background: linear-gradient(to right top, $ananas 0%, $ananas 50%, $back 50%, $back 100%);
+}
+
+.ananas-color3 {
+	background: linear-gradient($back 0%, $back 35%, $ananas 35%, $ananas 100%);
+}
+
+/*AUBERGINE*/
+.aubergine-aubergine-left-corner {
+	background: linear-gradient(to left top, $aubergine 0%, $aubergine 50%, $aubergine 50%, $aubergine 100%);
+}
+
+.aubergine-aubergine-right-corner {
+	background: linear-gradient(to right top, $aubergine 0%, $aubergine 50%, $aubergine 50%, $aubergine 100%);
+}
+
+.aubergine-color1 {
+	background: linear-gradient(to left top, $back 0%, $back 50%, $aubergine 50%, $aubergine 100%);
+}
+.aubergine-color1-top {
+	background: linear-gradient(to left top, $aubergine 0%, $aubergine 50%, $back 50%, $back 100%);
+}
+
+.aubergine-color2 {
+	background: linear-gradient(to right top, $back 0%, $back 50%, $aubergine 50%, $aubergine 100%);
+}
+.aubergine-color2-top {
+	background: linear-gradient(to right top, $aubergine 0%, $aubergine 50%, $back 50%, $back 100%);
+}
+
+.aubergine-color3 {
+	background: linear-gradient($back 0%, $back 35%, $aubergine 35%, $aubergine 100%);
+}
+
+/*OLIVE*/
+.olive-olive-left-corner {
+	background: linear-gradient(to left top, $olive 0%, $olive 50%, $olive 50%, $olive 100%);
+}
+
+.olive-olive-right-corner {
+	background: linear-gradient(to right top, $olive 0%, $olive 50%, $olive 50%, $olive 100%);
+}
+
+.olive-color1 {
+	background: linear-gradient(to left top, $back 0%, $back 50%, $olive 50%, $olive 100%);
+}
+.olive-color1-top {
+	background: linear-gradient(to left top, $olive 0%, $olive 50%, $back 50%, $back 100%);
+}
+
+.olive-color2 {
+	background: linear-gradient(to right top, $back 0%, $back 50%, $olive 50%, $olive 100%);
+}
+.olive-color2-top {
+	background: linear-gradient(to right top, $olive 0%, $olive 50%, $back 50%, $back 100%);
+}
+
+.olive-color3 {
+	background: linear-gradient($back 0%, $back 35%, $olive 35%, $olive 100%);
+}
+
+/*JAMBON*/
+.jambon-jambon-left-corner {
+	background: linear-gradient(to left top, $jambon 0%, $jambon 50%, $jambon 50%, $jambon 100%);
+}
+
+.jambon-jambon-right-corner {
+	background: linear-gradient(to right top, $jambon 0%, $jambon 50%, $jambon 50%, $jambon 100%);
+}
+
+.jambon-color1 {
+	background: linear-gradient(to left top, $back 0%, $back 50%, $jambon 50%, $jambon 100%);
+}
+.jambon-color1-top {
+	background: linear-gradient(to left top, $jambon 0%, $jambon 50%, $back 50%, $back 100%);
+}
+
+.jambon-color2 {
+	background: linear-gradient(to right top, $back 0%, $back 50%, $jambon 50%, $jambon 100%);
+}
+.jambon-color2-top {
+	background: linear-gradient(to right top, $jambon 0%, $jambon 50%, $back 50%, $back 100%);
+}
+
+.jambon-color3 {
+	background: linear-gradient($back 0%, $back 35%, $jambon 35%, $jambon 100%);
+}
+
+/*TOMATE*/
+.tomate-tomate-left-corner {
+	background: linear-gradient(to left top, $tomate 0%, $tomate 50%, $tomate 50%, $tomate 100%);
+}
+
+.tomate-tomate-right-corner {
+	background: linear-gradient(to right top, $tomate 0%, $tomate 50%, $tomate 50%, $tomate 100%);
+}
+
+.tomate-color1 {
+	background: linear-gradient(to left top, $back 0%, $back 50%, $tomate 50%, $tomate 100%);
+}
+.tomate-color1-top {
+	background: linear-gradient(to left top, $tomate 0%, $tomate 50%, $back 50%, $back 100%);
+}
+
+.tomate-color2 {
+	background: linear-gradient(to right top, $back 0%, $back 50%, $tomate 50%, $tomate 100%);
+}
+.tomate-color2-top {
+	background: linear-gradient(to right top, $tomate 0%, $tomate 50%, $back 50%, $back 100%);
+}
+
+.tomate-color3 {
+	background: linear-gradient($back 0%, $back 35%, $tomate 35%, $tomate 100%);
+}
+
+/*CHAMPI*/
+.champi-champi-left-corner {
+	background: linear-gradient(to left top, $champi 0%, $champi 50%, $champi 50%, $champi 100%);
+}
+
+.champi-champi-right-corner {
+	background: linear-gradient(to right top, $champi 0%, $champi 50%, $champi 50%, $champi 100%);
+}
+
+.champi-color1 {
+	background: linear-gradient(to left top, $back 0%, $back 50%, $champi 50%, $champi 100%);
+}
+.champi-color1-top {
+	background: linear-gradient(to left top, $champi 0%, $champi 50%, $back 50%, $back 100%);
+}
+
+.champi-color2 {
+	background: linear-gradient(to right top, $back 0%, $back 50%, $champi 50%, $champi 100%);
+}
+.champi-color2-top {
+	background: linear-gradient(to right top, $champi 0%, $champi 50%, $back 50%, $back 100%);
+}
+
+.champi-color3 {
+	background: linear-gradient($back 0%, $back 35%, $champi 35%, $champi 100%);
+}
+
+/*CHEVRE*/
+.chevre-chevre-left-corner {
+	background: linear-gradient(to left top, $chevre 0%, $chevre 50%, $chevre 50%, $chevre 100%);
+}
+
+.chevre-chevre-right-corner {
+	background: linear-gradient(to right top, $chevre 0%, $chevre 50%, $chevre 50%, $chevre 100%);
+}
+
+.chevre-color1 {
+	background: linear-gradient(to left top, $back 0%, $back 50%, $chevre 50%, $chevre 100%);
+}
+.chevre-color1-top {
+	background: linear-gradient(to left top, $chevre 0%, $chevre 50%, $back 50%, $back 100%);
+}
+
+.chevre-color2 {
+	background: linear-gradient(to right top, $back 0%, $back 50%, $chevre 50%, $chevre 100%);
+}
+.chevre-color2-top {
+	background: linear-gradient(to right top, $chevre 0%, $chevre 50%, $back 50%, $back 100%);
+}
+
+.chevre-color3 {
+	background: linear-gradient($back 0%, $back 35%, $chevre 35%, $chevre 100%);
+}
+
+/*SALADE*/
+.salade-salade-left-corner {
+	background: linear-gradient(to left top, $salade 0%, $salade 50%, $salade 50%, $salade 100%);
+}
+
+.salade-salade-right-corner {
+	background: linear-gradient(to right top, $salade 0%, $salade 50%, $salade 50%, $salade 100%);
+}
+
+.salade-color1 {
+	background: linear-gradient(to left top, $back 0%, $back 50%, $salade 50%, $salade 100%);
+}
+.salade-color1-top {
+	background: linear-gradient(to left top, $salade 0%, $salade 50%, $back 50%, $back 100%);
+}
+
+.salade-color2 {
+	background: linear-gradient(to right top, $back 0%, $back 50%, $salade 50%, $salade 100%);
+}
+.salade-color2-top {
+	background: linear-gradient(to right top, $salade 0%, $salade 50%, $back 50%, $back 100%);
+}
+
+.salade-color3 {
+	background: linear-gradient($back 0%, $back 35%, $salade 35%, $salade 100%);
+}
+
+/*WHITE*/
+.white-white-left-corner {
+	background: linear-gradient(to left top, white 0%, white 50%, white 50%, white 100%);
+}
+
+.white-white-right-corner {
+	background: linear-gradient(to right top, white 0%, white 50%, white 50%, white 100%);
+}
+
+.white-color1 {
+	background: linear-gradient(to left top, $back 0%, $back 50%, white 50%, white 100%);
+}
+.white-color1-top {
+	background: linear-gradient(to left top, white 0%, white 50%, $back 50%, $back 100%);
+}
+
+.white-color2 {
+	background: linear-gradient(to right top, $back 0%, $back 50%, white 50%, white 100%);
+}
+.white-color2-top {
+	background: linear-gradient(to right top, white 0%, white 50%, $back 50%, $back 100%);
+}
+
+.white-color3 {
+	background: linear-gradient($back 0%, $back 35%, $white 35%, $white 100%);
+}
+
+
+
+/*CORNERS*/
+/* aubergine, jambon, olive, tomate, ananas, champi, chevre, salade, white */
+
+/* ANANAS*/
+.ananas-aubergine-left-corner {
+	background: linear-gradient(to left top, $aubergine 0%, $aubergine 50%, $ananas 50%, $ananas 100%);
+}
+
+.ananas-aubergine-right-corner {
+	background: linear-gradient(to right top, $aubergine 0%, $aubergine 50%, $ananas 50%, $ananas 100%);
+}
+
+.ananas-jambon-left-corner {
+	background: linear-gradient(to left top, $jambon 0%, $jambon 50%, $ananas 50%, $ananas 100%);
+}
+
+.ananas-jambon-right-corner {
+	background: linear-gradient(to right top, $jambon 0%, $jambon 50%, $ananas 50%, $ananas 100%);
+}
+
+.ananas-olive-left-corner {
+	background: linear-gradient(to left top, $olive 0%, $olive 50%, $ananas 50%, $ananas 100%);
+}
+
+.ananas-olive-right-corner {
+	background: linear-gradient(to right top, $olive 0%, $olive 50%, $ananas 50%, $ananas 100%);
+}
+
+.ananas-tomate-left-corner {
+	background: linear-gradient(to left top, $tomate 0%, $tomate 50%, $ananas 50%, $ananas 100%);
+}
+
+.ananas-tomate-right-corner {
+	background: linear-gradient(to right top, $tomate 0%, $tomate 50%, $ananas 50%, $ananas 100%);
+}
+
+.ananas-champi-left-corner {
+	background: linear-gradient(to left top, $champi 0%, $champi 50%, $ananas 50%, $ananas 100%);
+}
+
+.ananas-champi-right-corner {
+	background: linear-gradient(to right top, $champi 0%, $champi 50%, $ananas 50%, $ananas 100%);
+}
+
+.ananas-chevre-left-corner {
+	background: linear-gradient(to left top, $chevre 0%, $chevre 50%, $ananas 50%, $ananas 100%);
+}
+
+.ananas-chevre-right-corner {
+	background: linear-gradient(to right top, $chevre 0%, $chevre 50%, $ananas 50%, $ananas 100%);
+}
+
+.ananas-salade-left-corner {
+	background: linear-gradient(to left top, $salade 0%, $salade 50%, $ananas 50%, $ananas 100%);
+}
+
+.ananas-salade-right-corner {
+	background: linear-gradient(to right top, $salade 0%, $salade 50%, $ananas 50%, $ananas 100%);
+}
+
+.ananas-white-left-corner {
+	background: linear-gradient(to left top, $white 0%, $white 50%, $ananas 50%, $ananas 100%);
+}
+
+.ananas-white-right-corner {
+	background: linear-gradient(to right top, $white 0%, $white 50%, $ananas 50%, $ananas 100%);
+}
+
+
+
+/* AUBERGINE*/
+.aubergine-ananas-left-corner {
+	background: linear-gradient(to left top, $ananas 0%, $ananas 50%, $aubergine 50%, $aubergine 100%);
+}
+
+.aubergine-ananas-right-corner {
+	background: linear-gradient(to right top, $ananas 0%, $ananas 50%, $aubergine 50%, $aubergine 100%);
+}
+
+.aubergine-jambon-left-corner {
+	background: linear-gradient(to left top, $jambon 0%, $jambon 50%, $aubergine 50%, $aubergine 100%);
+}
+
+.aubergine-jambon-right-corner {
+	background: linear-gradient(to right top, $jambon 0%, $jambon 50%, $aubergine 50%, $aubergine 100%);
+}
+
+.aubergine-olive-left-corner {
+	background: linear-gradient(to left top, $olive 0%, $olive 50%, $aubergine 50%, $aubergine 100%);
+}
+
+.aubergine-olive-right-corner {
+	background: linear-gradient(to right top, $olive 0%, $olive 50%, $aubergine 50%, $aubergine 100%);
+}
+
+.aubergine-tomate-left-corner {
+	background: linear-gradient(to left top, $tomate 0%, $tomate 50%, $aubergine 50%, $aubergine 100%);
+}
+
+.aubergine-tomate-right-corner {
+	background: linear-gradient(to right top, $tomate 0%, $tomate 50%, $aubergine 50%, $aubergine 100%);
+}
+
+.aubergine-champi-left-corner {
+	background: linear-gradient(to left top, $champi 0%, $champi 50%, $aubergine 50%, $aubergine 100%);
+}
+
+.aubergine-champi-right-corner {
+	background: linear-gradient(to right top, $champi 0%, $champi 50%, $aubergine 50%, $aubergine 100%);
+}
+
+.aubergine-chevre-left-corner {
+	background: linear-gradient(to left top, $chevre 0%, $chevre 50%, $aubergine 50%, $aubergine 100%);
+}
+
+.aubergine-chevre-right-corner {
+	background: linear-gradient(to right top, $chevre 0%, $chevre 50%, $aubergine 50%, $aubergine 100%);
+}
+
+.aubergine-salade-left-corner {
+	background: linear-gradient(to left top, $salade 0%, $salade 50%, $aubergine 50%, $aubergine 100%);
+}
+
+.aubergine-salade-right-corner {
+	background: linear-gradient(to right top, $salade 0%, $salade 50%, $aubergine 50%, $aubergine 100%);
+}
+
+.aubergine-white-left-corner {
+	background: linear-gradient(to left top, $white 0%, $white 50%, $aubergine 50%, $aubergine 100%);
+}
+
+.aubergine-white-right-corner {
+	background: linear-gradient(to right top, $white 0%, $white 50%, $aubergine 50%, $aubergine 100%);
+}
+
+
+
+/* JAMBON*/
+.jambon-ananas-left-corner {
+	background: linear-gradient(to left top, $ananas 0%, $ananas 50%, $jambon 50%, $jambon 100%);
+}
+
+.jambon-ananas-right-corner {
+	background: linear-gradient(to right top, $ananas 0%, $ananas 50%, $jambon 50%, $jambon 100%);
+}
+
+.jambon-aubergine-left-corner {
+	background: linear-gradient(to left top, $aubergine 0%, $aubergine 50%, $jambon 50%, $jambon 100%);
+}
+
+.jambon-aubergine-right-corner {
+	background: linear-gradient(to right top, $aubergine 0%, $aubergine 50%, $jambon 50%, $jambon 100%);
+}
+
+.jambon-olive-left-corner {
+	background: linear-gradient(to left top, $olive 0%, $olive 50%, $jambon 50%, $jambon 100%);
+}
+
+.jambon-olive-right-corner {
+	background: linear-gradient(to right top, $olive 0%, $olive 50%, $jambon 50%, $jambon 100%);
+}
+
+.jambon-tomate-left-corner {
+	background: linear-gradient(to left top, $tomate 0%, $tomate 50%, $jambon 50%, $jambon 100%);
+}
+
+.jambon-tomate-right-corner {
+	background: linear-gradient(to right top, $tomate 0%, $tomate 50%, $jambon 50%, $jambon 100%);
+}
+
+.jambon-champi-left-corner {
+	background: linear-gradient(to left top, $champi 0%, $champi 50%, $jambon 50%, $jambon 100%);
+}
+
+.jambon-champi-right-corner {
+	background: linear-gradient(to right top, $champi 0%, $champi 50%, $jambon 50%, $jambon 100%);
+}
+
+.jambon-chevre-left-corner {
+	background: linear-gradient(to left top, $chevre 0%, $chevre 50%, $jambon 50%, $jambon 100%);
+}
+
+.jambon-chevre-right-corner {
+	background: linear-gradient(to right top, $chevre 0%, $chevre 50%, $jambon 50%, $jambon 100%);
+}
+
+.jambon-salade-left-corner {
+	background: linear-gradient(to left top, $salade 0%, $salade 50%, $jambon 50%, $jambon 100%);
+}
+
+.jambon-salade-right-corner {
+	background: linear-gradient(to right top, $salade 0%, $salade 50%, $jambon 50%, $jambon 100%);
+}
+
+.jambon-white-left-corner {
+	background: linear-gradient(to left top, $white 0%, $white 50%, $jambon 50%, $jambon 100%);
+}
+
+.jambon-white-right-corner {
+	background: linear-gradient(to right top, $white 0%, $white 50%, $jambon 50%, $jambon 100%);
+}
+
+
+
+/* OLIVE*/
+.olive-ananas-left-corner {
+	background: linear-gradient(to left top, $ananas 0%, $ananas 50%, $olive 50%, $olive 100%);
+}
+
+.olive-ananas-right-corner {
+	background: linear-gradient(to right top, $ananas 0%, $ananas 50%, $olive 50%, $olive 100%);
+}
+
+.olive-aubergine-left-corner {
+	background: linear-gradient(to left top, $aubergine 0%, $aubergine 50%, $olive 50%, $olive 100%);
+}
+
+.olive-aubergine-right-corner {
+	background: linear-gradient(to right top, $aubergine 0%, $aubergine 50%, $olive 50%, $olive 100%);
+}
+
+.olive-jambon-left-corner {
+	background: linear-gradient(to left top, $jambon 0%, $jambon 50%, $olive 50%, $olive 100%);
+}
+
+.olive-jambon-right-corner {
+	background: linear-gradient(to right top, $jambon 0%, $jambon 50%, $olive 50%, $olive 100%);
+}
+
+.olive-tomate-left-corner {
+	background: linear-gradient(to left top, $tomate 0%, $tomate 50%, $olive 50%, $olive 100%);
+}
+
+.olive-tomate-right-corner {
+	background: linear-gradient(to right top, $tomate 0%, $tomate 50%, $olive 50%, $olive 100%);
+}
+
+.olive-champi-left-corner {
+	background: linear-gradient(to left top, $champi 0%, $champi 50%, $olive 50%, $olive 100%);
+}
+
+.olive-champi-right-corner {
+	background: linear-gradient(to right top, $champi 0%, $champi 50%, $olive 50%, $olive 100%);
+}
+
+.olive-chevre-left-corner {
+	background: linear-gradient(to left top, $chevre 0%, $chevre 50%, $olive 50%, $olive 100%);
+}
+
+.olive-chevre-right-corner {
+	background: linear-gradient(to right top, $chevre 0%, $chevre 50%, $olive 50%, $olive 100%);
+}
+
+.olive-salade-left-corner {
+	background: linear-gradient(to left top, $salade 0%, $salade 50%, $olive 50%, $olive 100%);
+}
+
+.olive-salade-right-corner {
+	background: linear-gradient(to right top, $salade 0%, $salade 50%, $olive 50%, $olive 100%);
+}
+
+.olive-white-left-corner {
+	background: linear-gradient(to left top, $white 0%, $white 50%, $olive 50%, $olive 100%);
+}
+
+.olive-white-right-corner {
+	background: linear-gradient(to right top, $white 0%, $white 50%, $olive 50%, $olive 100%);
+}
+
+
+
+
+/* TOMATE*/
+.tomate-ananas-left-corner {
+	background: linear-gradient(to left top, $ananas 0%, $ananas 50%, $tomate 50%, $tomate 100%);
+}
+
+.tomate-ananas-right-corner {
+	background: linear-gradient(to right top, $ananas 0%, $ananas 50%, $tomate 50%, $tomate 100%);
+}
+
+.tomate-aubergine-left-corner {
+	background: linear-gradient(to left top, $aubergine 0%, $aubergine 50%, $tomate 50%, $tomate 100%);
+}
+
+.tomate-aubergine-right-corner {
+	background: linear-gradient(to right top, $aubergine 0%, $aubergine 50%, $tomate 50%, $tomate 100%);
+}
+
+.tomate-jambon-left-corner {
+	background: linear-gradient(to left top, $jambon 0%, $jambon 50%, $tomate 50%, $tomate 100%);
+}
+
+.tomate-jambon-right-corner {
+	background: linear-gradient(to right top, $jambon 0%, $jambon 50%, $tomate 50%, $tomate 100%);
+}
+
+.tomate-olive-left-corner {
+	background: linear-gradient(to left top, $olive 0%, $olive 50%, $tomate 50%, $tomate 100%);
+}
+
+.tomate-olive-right-corner {
+	background: linear-gradient(to right top, $olive 0%, $olive 50%, $tomate 50%, $tomate 100%);
+}
+
+.tomate-champi-left-corner {
+	background: linear-gradient(to left top, $champi 0%, $champi 50%, $tomate 50%, $tomate 100%);
+}
+
+.tomate-champi-right-corner {
+	background: linear-gradient(to right top, $champi 0%, $champi 50%, $tomate 50%, $tomate 100%);
+}
+
+.tomate-chevre-left-corner {
+	background: linear-gradient(to left top, $chevre 0%, $chevre 50%, $tomate 50%, $tomate 100%);
+}
+
+.tomate-chevre-right-corner {
+	background: linear-gradient(to right top, $chevre 0%, $chevre 50%, $tomate 50%, $tomate 100%);
+}
+
+.tomate-salade-left-corner {
+	background: linear-gradient(to left top, $salade 0%, $salade 50%, $tomate 50%, $tomate 100%);
+}
+
+.tomate-salade-right-corner {
+	background: linear-gradient(to right top, $salade 0%, $salade 50%, $tomate 50%, $tomate 100%);
+}
+
+.tomate-white-left-corner {
+	background: linear-gradient(to left top, $white 0%, $white 50%, $tomate 50%, $tomate 100%);
+}
+
+.tomate-white-right-corner {
+	background: linear-gradient(to right top, $white 0%, $white 50%, $tomate 50%, $tomate 100%);
+}
+
+
+
+
+/* CHAMPI*/
+.champi-ananas-left-corner {
+	background: linear-gradient(to left top, $ananas 0%, $ananas 50%, $champi 50%, $champi 100%);
+}
+
+.champi-ananas-right-corner {
+	background: linear-gradient(to right top, $ananas 0%, $ananas 50%, $champi 50%, $champi 100%);
+}
+
+.champi-aubergine-left-corner {
+	background: linear-gradient(to left top, $aubergine 0%, $aubergine 50%, $champi 50%, $champi 100%);
+}
+
+.champi-aubergine-right-corner {
+	background: linear-gradient(to right top, $aubergine 0%, $aubergine 50%, $champi 50%, $champi 100%);
+}
+
+.champi-jambon-left-corner {
+	background: linear-gradient(to left top, $jambon 0%, $jambon 50%, $champi 50%, $champi 100%);
+}
+
+.champi-jambon-right-corner {
+	background: linear-gradient(to right top, $jambon 0%, $jambon 50%, $champi 50%, $champi 100%);
+}
+
+.champi-olive-left-corner {
+	background: linear-gradient(to left top, $olive 0%, $olive 50%, $champi 50%, $champi 100%);
+}
+
+.champi-olive-right-corner {
+	background: linear-gradient(to right top, $olive 0%, $olive 50%, $champi 50%, $champi 100%);
+}
+
+.champi-tomate-left-corner {
+	background: linear-gradient(to left top, $tomate 0%, $tomate 50%, $champi 50%, $champi 100%);
+}
+
+.champi-tomate-right-corner {
+	background: linear-gradient(to right top, $tomate 0%, $tomate 50%, $champi 50%, $champi 100%);
+}
+
+.champi-chevre-left-corner {
+	background: linear-gradient(to left top, $chevre 0%, $chevre 50%, $champi 50%, $champi 100%);
+}
+
+.champi-chevre-right-corner {
+	background: linear-gradient(to right top, $chevre 0%, $chevre 50%, $champi 50%, $champi 100%);
+}
+
+.champi-salade-left-corner {
+	background: linear-gradient(to left top, $salade 0%, $salade 50%, $champi 50%, $champi 100%);
+}
+
+.champi-salade-right-corner {
+	background: linear-gradient(to right top, $salade 0%, $salade 50%, $champi 50%, $champi 100%);
+}
+
+.champi-white-left-corner {
+	background: linear-gradient(to left top, $white 0%, $white 50%, $champi 50%, $champi 100%);
+}
+
+.champi-white-right-corner {
+	background: linear-gradient(to right top, $white 0%, $white 50%, $champi 50%, $champi 100%);
+}
+
+
+
+/* CHEVRE*/
+.chevre-ananas-left-corner {
+	background: linear-gradient(to left top, $ananas 0%, $ananas 50%, $chevre 50%, $chevre 100%);
+}
+
+.chevre-ananas-right-corner {
+	background: linear-gradient(to right top, $ananas 0%, $ananas 50%, $chevre 50%, $chevre 100%);
+}
+
+.chevre-aubergine-left-corner {
+	background: linear-gradient(to left top, $aubergine 0%, $aubergine 50%, $chevre 50%, $chevre 100%);
+}
+
+.chevre-aubergine-right-corner {
+	background: linear-gradient(to right top, $aubergine 0%, $aubergine 50%, $chevre 50%, $chevre 100%);
+}
+
+.chevre-jambon-left-corner {
+	background: linear-gradient(to left top, $jambon 0%, $jambon 50%, $chevre 50%, $chevre 100%);
+}
+
+.chevre-jambon-right-corner {
+	background: linear-gradient(to right top, $jambon 0%, $jambon 50%, $chevre 50%, $chevre 100%);
+}
+
+.chevre-olive-left-corner {
+	background: linear-gradient(to left top, $olive 0%, $olive 50%, $chevre 50%, $chevre 100%);
+}
+
+.chevre-olive-right-corner {
+	background: linear-gradient(to right top, $olive 0%, $olive 50%, $chevre 50%, $chevre 100%);
+}
+
+.chevre-tomate-left-corner {
+	background: linear-gradient(to left top, $tomate 0%, $tomate 50%, $chevre 50%, $chevre 100%);
+}
+
+.chevre-tomate-right-corner {
+	background: linear-gradient(to right top, $tomate 0%, $tomate 50%, $chevre 50%, $chevre 100%);
+}
+
+.chevre-champi-left-corner {
+	background: linear-gradient(to left top, $champi 0%, $champi 50%, $chevre 50%, $chevre 100%);
+}
+
+.chevre-champi-right-corner {
+	background: linear-gradient(to right top, $champi 0%, $champi 50%, $chevre 50%, $chevre 100%);
+}
+
+.chevre-salade-left-corner {
+	background: linear-gradient(to left top, $salade 0%, $salade 50%, $chevre 50%, $chevre 100%);
+}
+
+.chevre-salade-right-corner {
+	background: linear-gradient(to right top, $salade 0%, $salade 50%, $chevre 50%, $chevre 100%);
+}
+
+.chevre-white-left-corner {
+	background: linear-gradient(to left top, $white 0%, $white 50%, $chevre 50%, $chevre 100%);
+}
+
+.chevre-white-right-corner {
+	background: linear-gradient(to right top, $white 0%, $white 50%, $chevre 50%, $chevre 100%);
+}
+
+
+
+
+
+/* SALADE*/
+.salade-ananas-left-corner {
+	background: linear-gradient(to left top, $ananas 0%, $ananas 50%, $salade 50%, $salade 100%);
+}
+
+.salade-ananas-right-corner {
+	background: linear-gradient(to right top, $ananas 0%, $ananas 50%, $salade 50%, $salade 100%);
+}
+
+.salade-aubergine-left-corner {
+	background: linear-gradient(to left top, $aubergine 0%, $aubergine 50%, $salade 50%, $salade 100%);
+}
+
+.salade-aubergine-right-corner {
+	background: linear-gradient(to right top, $aubergine 0%, $aubergine 50%, $salade 50%, $salade 100%);
+}
+
+.salade-jambon-left-corner {
+	background: linear-gradient(to left top, $jambon 0%, $jambon 50%, $salade 50%, $salade 100%);
+}
+
+.salade-jambon-right-corner {
+	background: linear-gradient(to right top, $jambon 0%, $jambon 50%, $salade 50%, $salade 100%);
+}
+
+.salade-olive-left-corner {
+	background: linear-gradient(to left top, $olive 0%, $olive 50%, $salade 50%, $salade 100%);
+}
+
+.salade-olive-right-corner {
+	background: linear-gradient(to right top, $olive 0%, $olive 50%, $salade 50%, $salade 100%);
+}
+
+.salade-tomate-left-corner {
+	background: linear-gradient(to left top, $tomate 0%, $tomate 50%, $salade 50%, $salade 100%);
+}
+
+.salade-tomate-right-corner {
+	background: linear-gradient(to right top, $tomate 0%, $tomate 50%, $salade 50%, $salade 100%);
+}
+
+.salade-champi-left-corner {
+	background: linear-gradient(to left top, $champi 0%, $champi 50%, $salade 50%, $salade 100%);
+}
+
+.salade-champi-right-corner {
+	background: linear-gradient(to right top, $champi 0%, $champi 50%, $salade 50%, $salade 100%);
+}
+
+.salade-chevre-left-corner {
+	background: linear-gradient(to left top, $chevre 0%, $chevre 50%, $salade 50%, $salade 100%);
+}
+
+.salade-chevre-right-corner {
+	background: linear-gradient(to right top, $chevre 0%, $chevre 50%, $salade 50%, $salade 100%);
+}
+
+.salade-white-left-corner {
+	background: linear-gradient(to left top, $white 0%, $white 50%, $salade 50%, $salade 100%);
+}
+
+.salade-white-right-corner {
+	background: linear-gradient(to right top, $white 0%, $white 50%, $salade 50%, $salade 100%);
+}
+
+
+
+
+
+/* WHITE*/
+.white-ananas-left-corner {
+	background: linear-gradient(to left top, $ananas 0%, $ananas 50%, $white 50%, $white 100%);
+}
+
+.white-ananas-right-corner {
+	background: linear-gradient(to right top, $ananas 0%, $ananas 50%, $white 50%, $white 100%);
+}
+
+.white-aubergine-left-corner {
+	background: linear-gradient(to left top, $aubergine 0%, $aubergine 50%, $white 50%, $white 100%);
+}
+
+.white-aubergine-right-corner {
+	background: linear-gradient(to right top, $aubergine 0%, $aubergine 50%, $white 50%, $white 100%);
+}
+
+.white-jambon-left-corner {
+	background: linear-gradient(to left top, $jambon 0%, $jambon 50%, $white 50%, $white 100%);
+}
+
+.white-jambon-right-corner {
+	background: linear-gradient(to right top, $jambon 0%, $jambon 50%, $white 50%, $white 100%);
+}
+
+.white-olive-left-corner {
+	background: linear-gradient(to left top, $olive 0%, $olive 50%, $white 50%, $white 100%);
+}
+
+.white-olive-right-corner {
+	background: linear-gradient(to right top, $olive 0%, $olive 50%, $white 50%, $white 100%);
+}
+
+.white-tomate-left-corner {
+	background: linear-gradient(to left top, $tomate 0%, $tomate 50%, $white 50%, $white 100%);
+}
+
+.white-tomate-right-corner {
+	background: linear-gradient(to right top, $tomate 0%, $tomate 50%, $white 50%, $white 100%);
+}
+
+.white-champi-left-corner {
+	background: linear-gradient(to left top, $champi 0%, $champi 50%, $white 50%, $white 100%);
+}
+
+.white-champi-right-corner {
+	background: linear-gradient(to right top, $champi 0%, $champi 50%, $white 50%, $white 100%);
+}
+
+.white-chevre-left-corner {
+	background: linear-gradient(to left top, $chevre 0%, $chevre 50%, $white 50%, $white 100%);
+}
+
+.white-chevre-right-corner {
+	background: linear-gradient(to right top, $chevre 0%, $chevre 50%, $white 50%, $white 100%);
+}
+
+.white-salade-left-corner {
+	background: linear-gradient(to left top, $salade 0%, $salade 50%, $white 50%, $white 100%);
+}
+
+.white-salade-right-corner {
+	background: linear-gradient(to right top, $salade 0%, $salade 50%, $white 50%, $white 100%);
+}

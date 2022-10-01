@@ -1,2 +1,69 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Tribu</h1>
+
+<%= @tuiles %>
+
+<div class="main">
+	<% @tuiles.each do |tuile| %>
+		<div class="squares">
+			<!-- ligne 1 -->
+			<div class="square"></div><div class="square"></div><div class="square"></div>
+
+			<div class="square <%= tuile.first %>-color1-top"></div><div class="square <%= tuile.second %>-color2-top"></div>
+
+			<div class="square"></div><div class="square"></div><div class="square"></div>
+
+			<!-- ligne 2 -->
+			<div class="square"></div><div class="square"></div>
+
+			<div class="square <%= tuile.first %>-color1-top"></div><div class="square <%= tuile.first %>-color1"></div>
+			<div class="square <%= tuile.second %>-color2"></div><div class="square <%= tuile.second %>-color2-top"></div>
+
+			<div class="square"></div><div class="square"></div>
+			<!-- ligne 3 -->
+			<div class="square"></div>
+
+			<div class="square <%= tuile.first %>-color1-top"></div><div class="square <%= tuile.first %>-color1"></div>
+
+			<div class="square"></div><div class="square"></div>	
+			
+			<div class="square <%= tuile.second %>-color2"></div><div class="square <%= tuile.second %>-color2-top"></div>
+
+			<div class="square"></div>
+			<!-- ligne 4 -->
+			<div class="square <%= tuile.first %>-color1-top"></div>
+			<div class="square <%= tuile.first %>-<%= tuile.last %>-left-corner"></div>
+			<div class="square <%= tuile.last %>-color3"></div><div class="square <%= tuile.last %>-color3"></div>	<div class="square <%= tuile.last %>-color3"></div><div class="square <%= tuile.last %>-color3"></div>
+			<div class="square <%= tuile.second %>-<%= tuile.last %>-right-corner"></div>
+			<div class="square <%= tuile.second %>-color2-top"></div>
+		</div>
+	<% end %>
+</div>
+
+<style>
+	.square {
+		width: 20px;
+		height: 30px;
+	}
+
+	.squares {
+		display:  grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-gap: 0px;
+		width: 148px;
+	}
+	
+	.main {
+		display: flex;
+	}
+</style>
+
+
+
+
+
+
+
+
+
+
+<% console %>
