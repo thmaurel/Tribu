@@ -16,10 +16,12 @@ class PlayersController < ApplicationController
     end
 
     def play
+        players = []
         stats = %w(aubergine jambon olive ananas champi chevre tomate salade attaque)
         @player = Player.find(params[:player])
         increment_ingredients
         earn_salade
+        earn_attaque(players)
         render json: {player: @player}
     end
 
@@ -27,6 +29,16 @@ class PlayersController < ApplicationController
 
     def earn_salade
         @player.pv += GAME[:salade][@player.salade]
+        @player.save
+    end
+
+    def earn_attaque(players)
+        @player.attaque = params["attaque"].to_i
+        @player.pv += 1 if @player.attaque > 5
+        @player.pv += 1 if @player.attaque > 10
+        @player.pv += 1 if @player.attaque > 15
+        @player.pv += players.select{|p| p < player.attak}.count
+        puts "LA MOULAGA"
         @player.save
     end
 

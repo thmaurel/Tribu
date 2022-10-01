@@ -4,14 +4,15 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static values = {
     tuile: Array,
-    attaque: String
+    attaque: String,
+    lvl: Number
   }
 
   static targets = ["tuile", "attaque"]
 
   rotate() {
     if (this.element.querySelector(".miror")) {
-      fetch(`/rotate?tuile=${this.tuileValue}&attaque=${this.attaqueValue}&miror=1`, {
+      fetch(`/rotate?tuile=${this.tuileValue}&attaque=${this.attaqueValue}&miror=1&lvl=${this.lvlValue}`, {
         headers: { "Accept": "text/plain" }
       })
         .then(response => response.text())
@@ -19,7 +20,7 @@ export default class extends Controller {
           this.element.outerHTML = data
         })
     } else {
-      fetch(`/rotate?tuile=${this.tuileValue}&attaque=${this.attaqueValue}`, {
+      fetch(`/rotate?tuile=${this.tuileValue}&attaque=${this.attaqueValue}&lvl=${this.lvlValue}`, {
         headers: { "Accept": "text/plain" }
       })
         .then(response => response.text())

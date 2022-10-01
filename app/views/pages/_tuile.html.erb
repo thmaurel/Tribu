@@ -1,4 +1,4 @@
-<div class="tuile-container" data-controller="rotate" data-rotate-tuile-value="<%= tuile%>" data-rotate-attaque-value="<%= attaque %>">
+<div class="tuile-container" data-controller="rotate" data-rotate-lvl-value="1" data-rotate-tuile-value="<%= tuile%>" data-rotate-attaque-value="<%= attaque %>">
     <% unless tuile == ["", "", ""] %>
         <div class="attaque <%= miror == "1" ? "attaque-toggle" : "" %>" data-rotate-target="attaque"><%= attaque %></div>
         <div class="rotate-btn" data-action="click->rotate#rotate"><i class="fa-solid fa-rotate"></i></div>

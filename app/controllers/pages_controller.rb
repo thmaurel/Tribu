@@ -28,12 +28,11 @@ class PagesController < ApplicationController
 
   def rotate
     tuile_init =  params["tuile"].split(",")
-    p "LA BOMBASSS"
-    p params["miror"]
     tuile_finale = [tuile_init.last, tuile_init.first, tuile_init.second]
+    partial = params["lvl"] == "2" ? "tuile2" : "tuile"
     respond_to do |format|
       format.html # Follow regular flow of Rails
-      format.text { render partial: "tuile", locals: {tuile: tuile_finale, attaque: params["attaque"], miror: params["miror"]}, formats: [:html] }
+      format.text { render partial: partial, locals: {tuile: tuile_finale, attaque: params["attaque"], miror: params["miror"]}, formats: [:html] }
     end
   end
 

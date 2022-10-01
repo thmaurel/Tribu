@@ -48,7 +48,6 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
-        console.log(data.player.pv)
         this.cubeAubergineTarget.style.left = `${4 + 50 * parseInt(data.player.aubergine)}px`
         this.cubeJambonTarget.style.left = `${4 + 50 * parseInt(data.player.jambon)}px`
         this.cubeOliveTarget.style.left = `${4 + 50 * parseInt(data.player.olive)}px`
@@ -110,8 +109,45 @@ export default class extends Controller {
                 this.rerollTarget.insertAdjacentHTML("beforeend", data)
               })
         }
+        if (stats.ananas !== "" && data.player.ananas > 0 && (data.player.ananas - parseInt(stats.ananas)) < 1) {
+          fetch("/piocheup", {headers: { "Accept": "text/plain" }})
+            .then(response => response.text())
+            .then((data) => {
+              this.rerollTarget.insertAdjacentHTML("beforeend", data)
+            })
+        }
+        if (stats.ananas !== "" && data.player.ananas > 2 && (data.player.ananas - parseInt(stats.ananas)) < 3) {
+          fetch("/piocheup", {headers: { "Accept": "text/plain" }})
+            .then(response => response.text())
+            .then((data) => {
+              this.rerollTarget.insertAdjacentHTML("beforeend", data)
+            })
+          fetch("/piocheup", {headers: { "Accept": "text/plain" }})
+            .then(response => response.text())
+            .then((data) => {
+              this.rerollTarget.insertAdjacentHTML("beforeend", data)
+            })
+        }
+        if (stats.ananas !== "" && data.player.ananas > 4 && (data.player.ananas - parseInt(stats.ananas)) < 5) {
+          fetch("/piocheup", {headers: { "Accept": "text/plain" }})
+            .then(response => response.text())
+            .then((data) => {
+              this.rerollTarget.insertAdjacentHTML("beforeend", data)
+            })
+          fetch("/piocheup", {headers: { "Accept": "text/plain" }})
+            .then(response => response.text())
+            .then((data) => {
+              this.rerollTarget.insertAdjacentHTML("beforeend", data)
+            })
+          fetch("/piocheup", {headers: { "Accept": "text/plain" }})
+            .then(response => response.text())
+            .then((data) => {
+              this.rerollTarget.insertAdjacentHTML("beforeend", data)
+            })
+        }
         this.computeAttaque()
       })
+      event.currentTarget.reset()
   }
 
   computeAttaque() {
