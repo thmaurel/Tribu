@@ -1,27 +1,107 @@
-<h1>Tribu</h1>
+<% if @player.id %>
+    <div class="container">
+        <div class="d-flex my-4">
+            <div class="player">
+                <div class="couleur aubergine">
+                    <div>1/1/1</div><div></div><div>2/1/1</div><div></div><div></div><div>2/2/2</div>
+                    <span class="cube"></span>
+                </div>
+                <div class="couleur jambon">
+                    <div>4</div><div></div><div></div><div>5</div><div></div><div>6</div>
+                    <span class="cube"></span>
+                </div>
+                <div class="couleur olive">
+                    <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+                    <span class="cube"></span>
+                </div>
+                <div class="couleur ananas">
+                    <div></div><div>1</div><div></div><div>2</div><div></div><div>3</div>
+                    <span class="cube"></span>
+                </div>
+                <div class="couleur champi">
+                    <div></div><div></div><div>1</div><div></div><div></div><div>1</div>
+                    <span class="cube"></span>
+                </div>
+                <div class="couleur chevre">
+                    <div></div><div>1</div><div></div><div>1</div><div></div><div>1</div>
+                    <span class="cube"></span>
+                </div>
+                <div class="couleur tomate">
+                    <div></div><div>1</div><div></div><div>2</div><div></div><div>3</div>
+                    <span class="cube"></span>
+                </div>
+                <div class="couleur salade">
+                    <div></div><div>1</div><div></div><div>2</div><div></div><div>3</div>
+                    <span class="cube"></span>
+                </div>
+            </div>
+            <div class="round-form text-center">
+                <%= form_with url: root_path, method: :get do %>
+                    <%= text_field_tag :aubergine, params[:aubergine], class: "form-control", placeholder: "aubergine" %>
+                    <%= text_field_tag :jambon, params[:jambon], class: "form-control", placeholder: "jambon" %>
+                    <%= text_field_tag :olive, params[:olive], class: "form-control", placeholder: "olive" %>
+                    <%= text_field_tag :ananas, params[:ananas], class: "form-control", placeholder: "ananas" %>
+                    <%= text_field_tag :champi, params[:champi], class: "form-control", placeholder: "champi" %>
+                    <%= text_field_tag :chevre, params[:chevre], class: "form-control", placeholder: "chevre" %>
+                    <%= text_field_tag :tomate, params[:tomate], class: "form-control", placeholder: "tomate" %>
+                    <%= text_field_tag :salade, params[:salade], class: "form-control", placeholder: "salade" %>
+                    <%= text_field_tag :attaque, params[:attaque], class: "form-control", placeholder: "attaque" %>
+                    <%= submit_tag "Jouer!", class: "form-submit" %>
+                <% end %>
+            </div>
+            <div class="player-pv" style="background-image: url(<%= image_path("pv.jpg") %>)">
+            10
+            </div>
+        </div>
 
-<div class="d-flex align-items-start">
-    <div class="text-center">
-        <h2>De côté</h2>
-        <div class="main" data-controller="hello">
-            <% @tuiles.each do |tuile| %>
-                <% attaque = rand(0..2) %>
-                <%= render "tuile", tuile: tuile, attaque: attaque, miror: "" %>
-            <% end %>
+        <div class="d-flex align-items-start text-center">
+            <div class="main" data-controller="hello">
+                <h2 class="box-title">De côté</h2>
+                <% @tuiles.each do |tuile| %>
+                    <% attaque = rand(0..2) %>
+                    <%= render "tuile", tuile: tuile, attaque: attaque, miror: "" %>
+                <% end %>
+            </div>
+            <div class="main" data-controller="hello">
+                <h2 class="box-title">En jeu</h2>
+                <% [["", "", ""], ["", "", ""]].each do |tuile| %>
+                    <% attaque = rand(0..2) %>
+                    <%= render "tuile", tuile: tuile, attaque: attaque, miror: "" %>
+                <% end %>
+            </div>
         </div>
     </div>
-    <div class="text-center">
-        <h2>En jeu</h2>
-        <div class="main" data-controller="hello">
-            <% [["", "", ""], ["", "", ""]].each do |tuile| %>
-                <% attaque = rand(0..2) %>
-                <%= render "tuile", tuile: tuile, attaque: attaque, miror: "" %>
-            <% end %>
-        </div>
-    </div>
-</div>
+<% end %>
 
 <style>
+    .player-pv {
+        height: 300px;
+        width: 300px;
+        background-size: cover;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        color:white;
+        font-size: 64px;
+        border-radius: 50%;
+    }
+
+    .form-submit {
+        border:none;
+        background-color:red;
+        color:white;
+        padding: 3px 5px;
+        border-radius:4px;
+    }
+    .round-form {
+        width: 100px;
+        margin: 0 100px;
+    }
+    .form-control {
+        padding: 0;
+        margin: 5px 0;
+    }
+
 	.square {
 		width: 20px;
 		height: 30px;
@@ -59,7 +139,15 @@
         height: auto;
         padding: 50px;
         margin: 50px;
+        margin-top: 0;
+        position: relative;
 	}
+
+    .box-title {
+        position:absolute;
+        top: 4px;
+        left: 4px;
+    }
 
     .rotate-btn {
         position:absolute;

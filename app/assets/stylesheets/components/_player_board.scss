@@ -1,0 +1,72 @@
+.couleur {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px 0;
+    margin: 10px 0;
+    position: relative;
+}
+
+.couleur > div {
+    border: 1px solid black;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width:50px;
+    font-weight: bold;
+    
+}
+
+.cube {
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    height: 10px;
+    width: 10px;
+    background-color: blue;
+    border: 1px solid black;
+    box-shadow: 0px 0px 2px white
+}
+
+.player {
+    width: 300px;
+}
+
+.olive {
+    background-color: $olive;
+    color:white;
+}
+
+.jambon {
+    background-color: $jambon;
+    color:black;
+}
+
+.aubergine {
+    background-color: $aubergine;
+    color:white;
+}
+
+.ananas {
+    background-color: $ananas;
+    color:black;
+}
+
+.champi {
+    background-color: $champi;
+    color:black;
+}
+
+.chevre {
+    background-color: $chevre;
+    color:black;
+}
+
+.tomate {
+    background-color: $tomate;
+    color:white;
+}
+
+.salade {
+    background-color: $salade;
+    color:white;
+}

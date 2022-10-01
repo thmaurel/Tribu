@@ -12,6 +12,7 @@ class PagesController < ApplicationController
     end
     @tuiles << ["", "", ""]
     @tuiles << ["", "", ""]
+    @player = Player.new
 
 
   end
