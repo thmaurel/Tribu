@@ -10,8 +10,6 @@ class PagesController < ApplicationController
       3.times {tuile << SIDES.sample}
       @tuiles << tuile
     end
-    @tuiles << ["", "", ""]
-    @tuiles << ["", "", ""]
     @player = Player.new
     @player = Player.find(params[:player]) if params[:player]
     @attributes = {
@@ -36,6 +34,22 @@ class PagesController < ApplicationController
     respond_to do |format|
       format.html # Follow regular flow of Rails
       format.text { render partial: "tuile", locals: {tuile: tuile_finale, attaque: params["attaque"], miror: params["miror"]}, formats: [:html] }
+    end
+  end
+
+  def pioche
+    tuile = [SIDES.sample, SIDES.sample, SIDES.sample]
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "tuile", locals: {tuile: tuile, attaque: rand(0..2), miror: ""}, formats: [:html] }
+    end
+  end
+
+  def piocheup
+    tuile = [SIDES.sample, SIDES.sample, SIDES.sample]
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "tuile2", locals: {tuile: tuile, attaque: rand(2..4), miror: ""}, formats: [:html] }
     end
   end
 end
