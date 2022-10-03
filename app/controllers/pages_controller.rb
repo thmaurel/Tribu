@@ -23,16 +23,15 @@ class PagesController < ApplicationController
       salade: @player.salade,
       pv: @player.pv
     }
-
   end
 
   def rotate
-    tuile_init =  params["tuile"].split(",")
+    tuile_init = params["tuile"].split(",")
     tuile_finale = [tuile_init.last, tuile_init.first, tuile_init.second]
     partial = params["lvl"] == "2" ? "tuile2" : "tuile"
     respond_to do |format|
       format.html # Follow regular flow of Rails
-      format.text { render partial: partial, locals: {tuile: tuile_finale, attaque: params["attaque"], miror: params["miror"]}, formats: [:html] }
+      format.text { render partial:, locals: { tuile: tuile_finale, attaque: params["attaque"], miror: params["miror"] }, formats: [:html] }
     end
   end
 
@@ -40,7 +39,7 @@ class PagesController < ApplicationController
     tuile = [SIDES.sample, SIDES.sample, SIDES.sample]
     respond_to do |format|
       format.html # Follow regular flow of Rails
-      format.text { render partial: "tuile", locals: {tuile: tuile, attaque: rand(0..2), miror: ""}, formats: [:html] }
+      format.text { render partial: "tuile", locals: { tuile:, attaque: rand(0..2), miror: "" }, formats: [:html] }
     end
   end
 
@@ -48,7 +47,7 @@ class PagesController < ApplicationController
     tuile = [SIDES.sample, SIDES.sample, SIDES.sample]
     respond_to do |format|
       format.html # Follow regular flow of Rails
-      format.text { render partial: "tuile2", locals: {tuile: tuile, attaque: rand(2..4), miror: ""}, formats: [:html] }
+      format.text { render partial: "tuile2", locals: { tuile:, attaque: rand(2..4), miror: "" }, formats: [:html] }
     end
   end
 end

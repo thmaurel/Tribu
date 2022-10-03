@@ -2,7 +2,6 @@ body {
 	background-color: $back;
 }
 
-
 /*ANANAS*/
 .ananas-ananas-left-corner {
 	background: linear-gradient(to left top, $ananas 0%, $ananas 50%, $ananas 50%, $ananas 100%);
@@ -246,8 +245,6 @@ body {
 	background: linear-gradient($back 0%, $back 35%, $white 35%, $white 100%);
 }
 
-
-
 /*CORNERS*/
 /* aubergine, jambon, olive, tomate, ananas, champi, chevre, salade, white */
 
@@ -316,8 +313,6 @@ body {
 	background: linear-gradient(to right top, $white 0%, $white 50%, $ananas 50%, $ananas 100%);
 }
 
-
-
 /* AUBERGINE*/
 .aubergine-ananas-left-corner {
 	background: linear-gradient(to left top, $ananas 0%, $ananas 50%, $aubergine 50%, $aubergine 100%);
@@ -382,8 +377,6 @@ body {
 .aubergine-white-right-corner {
 	background: linear-gradient(to right top, $white 0%, $white 50%, $aubergine 50%, $aubergine 100%);
 }
-
-
 
 /* JAMBON*/
 .jambon-ananas-left-corner {
@@ -450,8 +443,6 @@ body {
 	background: linear-gradient(to right top, $white 0%, $white 50%, $jambon 50%, $jambon 100%);
 }
 
-
-
 /* OLIVE*/
 .olive-ananas-left-corner {
 	background: linear-gradient(to left top, $ananas 0%, $ananas 50%, $olive 50%, $olive 100%);
@@ -516,9 +507,6 @@ body {
 .olive-white-right-corner {
 	background: linear-gradient(to right top, $white 0%, $white 50%, $olive 50%, $olive 100%);
 }
-
-
-
 
 /* TOMATE*/
 .tomate-ananas-left-corner {
@@ -585,9 +573,6 @@ body {
 	background: linear-gradient(to right top, $white 0%, $white 50%, $tomate 50%, $tomate 100%);
 }
 
-
-
-
 /* CHAMPI*/
 .champi-ananas-left-corner {
 	background: linear-gradient(to left top, $ananas 0%, $ananas 50%, $champi 50%, $champi 100%);
@@ -652,8 +637,6 @@ body {
 .champi-white-right-corner {
 	background: linear-gradient(to right top, $white 0%, $white 50%, $champi 50%, $champi 100%);
 }
-
-
 
 /* CHEVRE*/
 .chevre-ananas-left-corner {
@@ -720,10 +703,6 @@ body {
 	background: linear-gradient(to right top, $white 0%, $white 50%, $chevre 50%, $chevre 100%);
 }
 
-
-
-
-
 /* SALADE*/
 .salade-ananas-left-corner {
 	background: linear-gradient(to left top, $ananas 0%, $ananas 50%, $salade 50%, $salade 100%);
@@ -788,10 +767,6 @@ body {
 .salade-white-right-corner {
 	background: linear-gradient(to right top, $white 0%, $white 50%, $salade 50%, $salade 100%);
 }
-
-
-
-
 
 /* WHITE*/
 .white-ananas-left-corner {
