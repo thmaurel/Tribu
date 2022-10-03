@@ -11,7 +11,7 @@ class PlayersController < ApplicationController
   }
 
   def create
-    @player = Player.create
+    @player = Player.create(player_params)
     redirect_to root_path(player: @player.id)
   end
 
@@ -26,6 +26,10 @@ class PlayersController < ApplicationController
   end
 
   private
+
+  def player_params
+    params.require(:player).permit(:name)
+  end
 
   def earn_salade
     @player.pv += GAME[:salade][@player.salade]

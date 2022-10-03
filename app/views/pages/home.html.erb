@@ -79,11 +79,24 @@
   </div>
 <% else %>
   <div class="container py-5">
-    <%= link_to "Start game", players_path, data: {turbo_method: :post}, class: "btn btn-primary" %>
+    <%= simple_form_for @player do |f| %>
+      <div class="d-flex align-items-center name-input">
+        <%= f.input :name, label: false, placeholder: "Enter your name" %>
+        <%= f.submit "Start game", class: "btn btn-primary" %>
+      </div>
+    <% end %>
   </div>
 <% end %>
 
 <style>
+  .name-input div {
+    margin-bottom:  0;
+    height:  100%;
+  }
+
+  .name-input div input {
+  }
+
   .player-pv {
     height: 300px;
     width: 300px;
@@ -107,7 +120,7 @@
     width: 100px;
     margin: 0 100px;
   }
-  .form-control {
+  .round-form .form-control {
     padding: 0;
     margin: 5px 0;
   }
