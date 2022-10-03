@@ -1,193 +1,185 @@
 <% if @player.id %>
-    <div class="container" data-controller="play" data-play-player-value="<%= @player.id%>" data-play-stats-value="<%= @attributes.to_json %>">
-        <div class="d-flex my-4">
-            <div class="round me-4">
-                Round <span data-play-target="round">1</span>
-            </div>
-            <div class="player">
-                <div class="couleur aubergine">
-                    <div>1/1/1</div><div></div><div>2/1/1</div><div></div><div></div><div>2/2/2</div>
-                    <span class="cube" data-play-target="cubeAubergine"></span>
-                </div>
-                <div class="couleur jambon">
-                    <div>4</div><div></div><div></div><div>5</div><div></div><div>6</div>
-                    <span class="cube" data-play-target="cubeJambon"></span>
-                </div>
-                <div class="couleur olive">
-                    <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
-                    <span class="cube" data-play-target="cubeOlive"></span>
-                </div>
-                <div class="couleur ananas">
-                    <div></div><div>1</div><div></div><div>2</div><div></div><div>3</div>
-                    <span class="cube" data-play-target="cubeAnanas"></span>
-                </div>
-                <div class="couleur champi">
-                    <div></div><div></div><div>1</div><div></div><div></div><div>1</div>
-                    <span class="cube" data-play-target="cubeChampi"></span>
-                </div>
-                <div class="couleur chevre">
-                    <div></div><div>1</div><div></div><div>1</div><div></div><div>1</div>
-                    <span class="cube" data-play-target="cubeChevre"></span>
-                </div>
-                <div class="couleur tomate">
-                    <div></div><div>1</div><div></div><div>2</div><div></div><div>3</div>
-                    <span class="cube cubeTomate" data-play-target="cubeTomate"></span>
-                </div>
-                <div class="couleur salade">
-                    <div></div><div>1</div><div></div><div>2</div><div></div><div>3</div>
-                    <span class="cube" data-play-target="cubeSalade"></span>
-                </div>
-            </div>
-            <div class="round-form text-center">
-                <%= form_with url: root_path, method: :get, data: {action: "submit->play#play"} do %>
-                    <%= text_field_tag :aubergine, params[:aubergine], class: "form-control", placeholder: "aubergine" %>
-                    <%= text_field_tag :jambon, params[:jambon], class: "form-control", placeholder: "jambon" %>
-                    <%= text_field_tag :olive, params[:olive], class: "form-control", placeholder: "olive" %>
-                    <%= text_field_tag :ananas, params[:ananas], class: "form-control", placeholder: "ananas" %>
-                    <%= text_field_tag :champi, params[:champi], class: "form-control", placeholder: "champi" %>
-                    <%= text_field_tag :chevre, params[:chevre], class: "form-control", placeholder: "chevre" %>
-                    <%= text_field_tag :tomate, params[:tomate], class: "form-control", placeholder: "tomate" %>
-                    <%= text_field_tag :salade, params[:salade], class: "form-control", placeholder: "salade" %>
-                    <%= text_field_tag :attaque, params[:attaque], class: "form-control attaque-input", placeholder: "attaque" %>
-                    <%= submit_tag "Jouer!", class: "form-submit" %>
-                <% end %>
-            </div>
-            <div class="player-pv" style="background-image: url(<%= image_path("pv.jpg") %>)" data-play-target="pv">
-                10
-            </div>
-            <div class="ms-4">
-                <div>aubergine: <%= @player.aubergine %></div>
-                <div>jambon: <%= @player.jambon %></div>
-                <div>olive: <%= @player.olive %></div>
-                <div>ananas: <%= @player.ananas %></div>
-                <div>champi: <%= @player.champi %></div>
-                <div>chevre: <%= @player.chevre %></div>
-                <div>tomate: <%= @player.tomate %></div>
-                <div>salade: <%= @player.salade %></div>
-            </div>
+  <div class="container" data-controller="play" data-play-player-value="<%= @player.id%>" data-play-stats-value="<%= @attributes.to_json %>">
+    <div class="d-flex my-4">
+      <div class="round me-4">
+          Round <span data-play-target="round">1</span>
+      </div>
+      <div class="player">
+        <div class="couleur aubergine">
+          <div>1/1/1</div><div></div><div>2/1/1</div><div></div><div></div><div>2/2/2</div>
+          <span class="cube" data-play-target="cubeAubergine"></span>
         </div>
+        <div class="couleur jambon">
+          <div>4</div><div></div><div></div><div>5</div><div></div><div>6</div>
+          <span class="cube" data-play-target="cubeJambon"></span>
+        </div>
+        <div class="couleur olive">
+          <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+          <span class="cube" data-play-target="cubeOlive"></span>
+        </div>
+        <div class="couleur ananas">
+          <div></div><div>1</div><div></div><div>2</div><div></div><div>3</div>
+          <span class="cube" data-play-target="cubeAnanas"></span>
+        </div>
+        <div class="couleur champi">
+          <div></div><div></div><div>1</div><div></div><div></div><div>1</div>
+          <span class="cube" data-play-target="cubeChampi"></span>
+        </div>
+        <div class="couleur chevre">
+          <div></div><div>1</div><div></div><div>1</div><div></div><div>1</div>
+          <span class="cube" data-play-target="cubeChevre"></span>
+        </div>
+        <div class="couleur tomate">
+          <div></div><div>1</div><div></div><div>2</div><div></div><div>3</div>
+          <span class="cube cubeTomate" data-play-target="cubeTomate"></span>
+        </div>
+        <div class="couleur salade">
+          <div></div><div>1</div><div></div><div>2</div><div></div><div>3</div>
+          <span class="cube" data-play-target="cubeSalade"></span>
+        </div>
+      </div>
+      <div class="round-form text-center">
+        <%= form_with url: root_path, method: :get, data: {action: "submit->play#play"} do %>
+          <%= text_field_tag :aubergine, params[:aubergine], class: "form-control", placeholder: "aubergine" %>
+          <%= text_field_tag :jambon, params[:jambon], class: "form-control", placeholder: "jambon" %>
+          <%= text_field_tag :olive, params[:olive], class: "form-control", placeholder: "olive" %>
+          <%= text_field_tag :ananas, params[:ananas], class: "form-control", placeholder: "ananas" %>
+          <%= text_field_tag :champi, params[:champi], class: "form-control", placeholder: "champi" %>
+          <%= text_field_tag :chevre, params[:chevre], class: "form-control", placeholder: "chevre" %>
+          <%= text_field_tag :tomate, params[:tomate], class: "form-control", placeholder: "tomate" %>
+          <%= text_field_tag :salade, params[:salade], class: "form-control", placeholder: "salade" %>
+          <%= text_field_tag :attaque, params[:attaque], class: "form-control attaque-input", placeholder: "attaque" %>
+          <%= submit_tag "Jouer!", class: "form-submit" %>
+        <% end %>
+      </div>
+      <div class="player-pv" style="background-image: url(<%= image_path("pv.jpg") %>)" data-play-target="pv">
+          10
+      </div>
+    </div>
 
-        <div class="d-flex align-items-start text-center">
-            <div class="main" data-controller="hello" data-play-target="reroll">
-                <h2 class="box-title">De côté</h2>
-                <% @tuiles.each do |tuile| %>
-                    <% attaque = rand(0..2) %>
-                    <%= render "tuile", tuile: tuile, attaque: attaque, miror: "" %>
-                <% end %>
-            </div>
-            <div class="main ingame" data-controller="hello">
-                <h2 class="box-title">En jeu</h2>
-                <% [["", "", ""], ["", "", ""]].each do |tuile| %>
-                    <% attaque = rand(0..2) %>
-                    <%= render "tuile", tuile: tuile, attaque: attaque, miror: "" %>
-                <% end %>
-            </div>
-            <div class="main" data-controller="hello">
-                <h2 class="box-title">Frigo</h2>
-            </div>
-        </div>
+    <div class="d-flex align-items-start text-center">
+      <div class="main" data-controller="hello" data-play-target="reroll">
+        <h2 class="box-title">De côté</h2>
+        <% @tuiles.each do |tuile| %>
+            <% attaque = rand(0..2) %>
+            <%= render "tuile", tuile: tuile, attaque: attaque, miror: "" %>
+        <% end %>
+      </div>
+      <div class="main ingame" data-controller="hello">
+        <h2 class="box-title">En jeu</h2>
+        <% [["", "", ""], ["", "", ""]].each do |tuile| %>
+            <% attaque = rand(0..2) %>
+            <%= render "tuile", tuile: tuile, attaque: attaque, miror: "" %>
+        <% end %>
+      </div>
+      <div class="main" data-controller="hello">
+        <h2 class="box-title">Frigo</h2>
+      </div>
     </div>
+  </div>
 <% else %>
-    <div class="container py-5">
-        <%= link_to "Start game", players_path, data: {turbo_method: :post}, class: "btn btn-primary" %>
-    </div>
+  <div class="container py-5">
+    <%= link_to "Start game", players_path, data: {turbo_method: :post}, class: "btn btn-primary" %>
+  </div>
 <% end %>
 
 <style>
-    .player-pv {
-        height: 300px;
-        width: 300px;
-        background-size: cover;
-        display:flex;
-        align-items: center;
-        justify-content: center;
-        color:white;
-        font-size: 64px;
-        border-radius: 50%;
-    }
+  .player-pv {
+    height: 300px;
+    width: 300px;
+    background-size: cover;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    font-size: 64px;
+    border-radius: 50%;
+  }
 
-    .form-submit {
-        border:none;
-        background-color:red;
-        color:white;
-        padding: 3px 5px;
-        border-radius:4px;
-    }
-    .round-form {
-        width: 100px;
-        margin: 0 100px;
-    }
-    .form-control {
-        padding: 0;
-        margin: 5px 0;
-    }
+  .form-submit {
+    border:none;
+    background-color:red;
+    color:white;
+    padding: 3px 5px;
+    border-radius:4px;
+  }
+  .round-form {
+    width: 100px;
+    margin: 0 100px;
+  }
+  .form-control {
+    padding: 0;
+    margin: 5px 0;
+  }
 
-	.square {
-		width: 20px;
-		height: 30px;
-	}
-	.attaque {
-		position: absolute;
-		top: 40%;
-		right: 44%;
-		font-size: 32px;
-        z-index: 100;
-	}
+  .square {
+  	width: 20px;
+  	height: 30px;
+  }
 
-    .attaque2 {
-        color: red;
-    }
+  .attaque {
+  	position: absolute;
+  	top: 40%;
+  	right: 44%;
+  	font-size: 32px;
+    z-index: 100;
+  }
 
-    .attaque-toggle {
-        top: 20%;
-    }
+  .attaque2 {
+    color: red;
+  }
 
-	.squares {
-		display:  grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-		grid-gap: 0px;
-		width: 160px;
-	}
+  .attaque-toggle {
+    top: 20%;
+  }
 
-    .tuile-container {
-        position: relative;
-        height: 120px;
-    }
-	
-	.main {
-        display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 50px 0;
-        border: 1px solid black;
-        width:610px;
-        height: auto;
-        min-height: 50px;
-        padding: 16px;
-        padding-top: 50px;
-        margin-top: 0;
-        position: relative;
-        margin: 20px;
-	}
+  .squares {
+  	display:  grid;
+  	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  	grid-gap: 0px;
+  	width: 160px;
+  }
 
-    .box-title {
-        position:absolute;
-        top: 4px;
-        left: 4px;
-    }
+  .tuile-container {
+    position: relative;
+    height: 120px;
+  }
 
-    .rotate-btn {
-        position:absolute;
-        right:40%;
-        bottom:-30px;
-    }
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 50px 0;
+    border: 1px solid black;
+    width:610px;
+    height: auto;
+    min-height: 50px;
+    padding: 16px;
+    padding-top: 50px;
+    margin-top: 0;
+    position: relative;
+    margin: 20px;
+    padding-bottom: 50px;
+  }
 
-    .miror-btn {
-        position:absolute;
-        right:60%;
-        bottom:-30px;
-    }
+  .box-title {
+    position:absolute;
+    top: 4px;
+    left: 4px;
+  }
 
-    .miror {
-        transform: rotate(180deg);
-    }
+  .rotate-btn {
+    position:absolute;
+    right:40%;
+    bottom:-30px;
+  }
+
+  .miror-btn {
+    position:absolute;
+    right:60%;
+    bottom:-30px;
+  }
+
+  .miror {
+    transform: rotate(180deg);
+  }
 </style>

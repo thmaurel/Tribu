@@ -5,9 +5,9 @@ class PagesController < ApplicationController
   def home
     session[:round] = 1
     @tuiles = []
-    6.times do 
+    6.times do
       tuile = []
-      3.times {tuile << SIDES.sample}
+      3.times { tuile << SIDES.sample }
       @tuiles << tuile
     end
     @player = Player.new
