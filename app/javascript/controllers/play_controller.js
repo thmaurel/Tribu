@@ -1,7 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 import Rails from 'rails-ujs'
 
-// Connects to data-controller="play"
 export default class extends Controller {
   static values = {
     player: Number,
@@ -23,8 +22,6 @@ export default class extends Controller {
   ]
 
   connect() {
-    console.log("play")
-    console.log(this.statsValue.aubergine)
     this.cubeAubergineTarget.style.left = `${4 + 50 * this.statsValue.aubergine}px`
     this.cubeJambonTarget.style.left = `${4 + 50 * this.statsValue.jambon}px`
     this.cubeOliveTarget.style.left = `${4 + 50 * this.statsValue.olive}px`
@@ -38,7 +35,6 @@ export default class extends Controller {
 
   play(event) {
     event.preventDefault()
-    console.log("wesh alors")
     const formData = new FormData(event.currentTarget)
     const stats = Object.fromEntries(formData)
     fetch(`/players/${this.playerValue}/play?player=${this.playerValue}`, {
@@ -59,95 +55,42 @@ export default class extends Controller {
         this.pvTarget.innerText = data.player.pv
         this.roundTarget.innerText = parseInt(this.roundTarget.innerText) + 1
         this.rerollTarget.innerHTML = `<h2 class="box-title">De côté</h2>`
-        // PIOCHE???
         if (parseInt(data.player.aubergine) < 2) {
-            fetch("/pioche", {headers: { "Accept": "text/plain" }})
-              .then(response => response.text())
-              .then((data) => {
-                this.rerollTarget.insertAdjacentHTML("beforeend", data)
-              })
-            fetch("/pioche", {headers: { "Accept": "text/plain" }})
-              .then(response => response.text())
-              .then((data) => {
-                this.rerollTarget.insertAdjacentHTML("beforeend", data)
-              })
-            fetch("/pioche", {headers: { "Accept": "text/plain" }})
-              .then(response => response.text())
-              .then((data) => {
-                this.rerollTarget.insertAdjacentHTML("beforeend", data)
-              })
+            for(let i = 0; i < 3; i++){ this.pioche()}
         } else if (parseInt(data.player.aubergine) < 5) {
-            fetch("/pioche", {headers: { "Accept": "text/plain" }})
-              .then(response => response.text())
-              .then((data) => {
-                this.rerollTarget.insertAdjacentHTML("beforeend", data)
-              })
-            fetch("/pioche", {headers: { "Accept": "text/plain" }})
-              .then(response => response.text())
-              .then((data) => {
-                this.rerollTarget.insertAdjacentHTML("beforeend", data)
-              })
-            fetch("/piocheup", {headers: { "Accept": "text/plain" }})
-              .then(response => response.text())
-              .then((data) => {
-                this.rerollTarget.insertAdjacentHTML("beforeend", data)
-              })
+            for(let i = 0; i < 2; i++){ this.pioche()}
+            this.piocheup()
         } else {
-            fetch("/piocheup", {headers: { "Accept": "text/plain" }})
-              .then(response => response.text())
-              .then((data) => {
-                this.rerollTarget.insertAdjacentHTML("beforeend", data)
-              })
-            fetch("/piocheup", {headers: { "Accept": "text/plain" }})
-              .then(response => response.text())
-              .then((data) => {
-                this.rerollTarget.insertAdjacentHTML("beforeend", data)
-              })
-            fetch("/piocheup", {headers: { "Accept": "text/plain" }})
-              .then(response => response.text())
-              .then((data) => {
-                this.rerollTarget.insertAdjacentHTML("beforeend", data)
-              })
+            for(let i = 0; i < 3; i++){ this.piocheup()}
         }
         if (stats.ananas !== "" && data.player.ananas > 0 && (data.player.ananas - parseInt(stats.ananas)) < 1) {
-          fetch("/piocheup", {headers: { "Accept": "text/plain" }})
-            .then(response => response.text())
-            .then((data) => {
-              this.rerollTarget.insertAdjacentHTML("beforeend", data)
-            })
+          this.piocheup()
         }
         if (stats.ananas !== "" && data.player.ananas > 2 && (data.player.ananas - parseInt(stats.ananas)) < 3) {
-          fetch("/piocheup", {headers: { "Accept": "text/plain" }})
-            .then(response => response.text())
-            .then((data) => {
-              this.rerollTarget.insertAdjacentHTML("beforeend", data)
-            })
-          fetch("/piocheup", {headers: { "Accept": "text/plain" }})
-            .then(response => response.text())
-            .then((data) => {
-              this.rerollTarget.insertAdjacentHTML("beforeend", data)
-            })
+          for(let i = 0; i < 2; i++){ this.piocheup()}
         }
         if (stats.ananas !== "" && data.player.ananas > 4 && (data.player.ananas - parseInt(stats.ananas)) < 5) {
-          fetch("/piocheup", {headers: { "Accept": "text/plain" }})
-            .then(response => response.text())
-            .then((data) => {
-              this.rerollTarget.insertAdjacentHTML("beforeend", data)
-            })
-          fetch("/piocheup", {headers: { "Accept": "text/plain" }})
-            .then(response => response.text())
-            .then((data) => {
-              this.rerollTarget.insertAdjacentHTML("beforeend", data)
-            })
-          fetch("/piocheup", {headers: { "Accept": "text/plain" }})
-            .then(response => response.text())
-            .then((data) => {
-              this.rerollTarget.insertAdjacentHTML("beforeend", data)
-            })
+          for(let i = 0; i < 3; i++){ this.piocheup()}
         }
         this.computeAttaque()
       })
       event.currentTarget.reset()
+  }
+
+  pioche() {
+    fetch("/pioche", {headers: { "Accept": "text/plain" }})
+      .then(response => response.text())
+      .then((data) => {
+        this.rerollTarget.insertAdjacentHTML("beforeend", data)
+      })
+  }
+
+  piocheup() {
+    fetch("/piocheup", {headers: { "Accept": "text/plain" }})
+      .then(response => response.text())
+      .then((data) => {
+        this.rerollTarget.insertAdjacentHTML("beforeend", data)
+      })
   }
 
   computeAttaque() {
