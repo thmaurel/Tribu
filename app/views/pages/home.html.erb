@@ -60,16 +60,14 @@
     <div class="d-flex align-items-start text-center">
       <div class="main" data-controller="hello" data-play-target="reroll">
         <h2 class="box-title">De côté</h2>
-        <% @tuiles.each do |tuile| %>
-            <% attaque = rand(0..2) %>
-            <%= render "tuile", tuile: tuile, attaque: attaque, miror: "" %>
+        <% @tuiles.each_with_index do |tuile, index| %>
+            <%= render "tuile", tuile: tuile, attaque: @attaques[index], miror: "" %>
         <% end %>
       </div>
       <div class="main ingame" data-controller="hello">
         <h2 class="box-title">En jeu</h2>
         <% [["", "", ""], ["", "", ""]].each do |tuile| %>
-            <% attaque = rand(0..2) %>
-            <%= render "tuile", tuile: tuile, attaque: attaque, miror: "" %>
+            <%= render "tuile", tuile: tuile, attaque: 0, miror: "" %>
         <% end %>
       </div>
       <div class="main" data-controller="hello">
