@@ -20,6 +20,7 @@ class PlayersController < ApplicationController
     stats = %w(aubergine jambon olive ananas champi chevre tomate salade attaque)
     @player = Player.find(params[:player])
     @round = Round.new
+    @round.number = @player.rounds.empty? ? 1 : @player.rounds.last.number + 1
     @round.player = @player
     increment_ingredients
     earn_salade
