@@ -85,7 +85,40 @@
     <% end %>
   </div>
 <% elsif @player.pv >= 30 %>
-<h1>CHAMPIONNNNNN</h1>
+  <h1>CHAMPIONNNNNN</h1>
+  <div class="d-flex">
+    <% @player.rounds.each do |round| %>
+      <div class="mx-4">
+        <h2>Round #<%= round.number %></h2>
+        <% if round.aubergine > 0 %>
+          <div>aubergine: <%= round.aubergine %></div>
+        <% end %>
+        <% if round.olive > 0 %>
+          <div>olive: <%= round.olive %></div>
+        <% end %>
+        <% if round.ananas > 0 %>
+          <div>ananas: <%= round.ananas %></div>
+        <% end %>
+        <% if round.jambon > 0 %>
+          <div>jambon: <%= round.jambon %></div>
+        <% end %>
+        <% if round.champi > 0 %>
+          <div>champi: <%= round.champi %></div>
+        <% end %>
+        <% if round.chevre > 0 %>
+          <div>chevre: <%= round.chevre %></div>
+        <% end %>
+        <% if round.salade > 0 %>
+          <div>salade: <%= round.salade %></div>
+        <% end %>
+        <% if round.tomate > 0 %>
+          <div>tomate: <%= round.tomate %></div>
+        <% end %>
+        <div>attaque: <%= round.attaque %></div>
+        <div>Point de victoire: <%= round.pv %></div>
+      </div>
+    <% end %>
+  </div>
 <% end %>
 
 <style>
