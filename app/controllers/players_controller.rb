@@ -19,9 +19,12 @@ class PlayersController < ApplicationController
     players = []
     stats = %w(aubergine jambon olive ananas champi chevre tomate salade attaque)
     @player = Player.find(params[:player])
+    @round = Round.new
+    @round.player = @player
     increment_ingredients
     earn_salade
     earn_attaque(players)
+    @round.save
     render json: {player: @player}
   end
 
@@ -33,27 +36,53 @@ class PlayersController < ApplicationController
 
   def earn_salade
     @player.pv += GAME[:salade][@player.salade]
+    @round.pv += GAME[:salade][@player.salade]
     @player.save
   end
 
   def earn_attaque(players)
     @player.attaque = params["attaque"].to_i
+    @round.attaque = params["attaque"].to_i
+
     @player.pv += 1 if @player.attaque > 5
+    @round.pv += 1 if @player.attaque > 5
+
     @player.pv += 1 if @player.attaque > 10
+    @round.pv += 1 if @player.attaque > 10
+
     @player.pv += 1 if @player.attaque > 15
+    @round.pv += 1 if @player.attaque > 10
+
     @player.pv += players.select { |p| p < player.attak }.count
+    @round.pv += players.select { |p| p < player.attak }.count
+
     @player.save
   end
 
   def increment_ingredients
     @player.aubergine += params["aubergine"].to_i unless params["aubergine"] == ""
+    @round.aubergine = params["aubergine"].to_i unless params["aubergine"] == ""
+
     @player.jambon += params["jambon"].to_i unless params["jambon"] == ""
+    @round.jambon = params["jambon"].to_i unless params["jambon"] == ""
+
     @player.olive += params["olive"].to_i unless params["olive"] == ""
+    @round.olive = params["olive"].to_i unless params["olive"] == ""
+
     @player.ananas += params["ananas"].to_i unless params["ananas"] == ""
+    @round.ananas = params["ananas"].to_i unless params["ananas"] == ""
+
     @player.champi += params["champi"].to_i unless params["champi"] == ""
+    @round.champi = params["champi"].to_i unless params["champi"] == ""
+
     @player.chevre += params["chevre"].to_i unless params["chevre"] == ""
+    @round.chevre = params["chevre"].to_i unless params["chevre"] == ""
+
     @player.tomate += params["tomate"].to_i unless params["tomate"] == ""
+    @round.tomate = params["tomate"].to_i unless params["tomate"] == ""
+
     @player.salade += params["salade"].to_i unless params["salade"] == ""
+    @round.salade = params["salade"].to_i unless params["salade"] == ""
 
     @player.aubergine = 5 if @player.aubergine > 5
     @player.jambon = 5 if @player.jambon > 5
