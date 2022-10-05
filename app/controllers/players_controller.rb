@@ -26,7 +26,11 @@ class PlayersController < ApplicationController
     earn_salade
     earn_attaque(players)
     @round.save
-    render json: {player: @player}
+    if @player.pv < 30
+      render json: {player: @player}
+    else
+      render json: {win: true, player: @player}
+    end
   end
 
   private

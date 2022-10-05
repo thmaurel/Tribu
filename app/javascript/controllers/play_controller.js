@@ -44,35 +44,40 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
-        this.cubeAubergineTarget.style.left = `${4 + 50 * parseInt(data.player.aubergine)}px`
-        this.cubeJambonTarget.style.left = `${4 + 50 * parseInt(data.player.jambon)}px`
-        this.cubeOliveTarget.style.left = `${4 + 50 * parseInt(data.player.olive)}px`
-        this.cubeAnanasTarget.style.left = `${4 + 50 * parseInt(data.player.ananas)}px`
-        this.cubeChampiTarget.style.left = `${4 + 50 * parseInt(data.player.champi)}px`
-        this.cubeChevreTarget.style.left = `${4 + 50 * parseInt(data.player.chevre)}px`
-        this.cubeTomateTarget.style.left = `${4 + 50 * parseInt(data.player.tomate)}px`
-        this.cubeSaladeTarget.style.left = `${4 + 50 * parseInt(data.player.salade)}px`
-        this.pvTarget.innerText = data.player.pv
-        this.roundTarget.innerText = parseInt(this.roundTarget.innerText) + 1
-        this.rerollTarget.innerHTML = `<h2 class="box-title">De côté</h2>`
-        if (parseInt(data.player.aubergine) < 2) {
-            for(let i = 0; i < 3; i++){ this.pioche()}
-        } else if (parseInt(data.player.aubergine) < 5) {
-            for(let i = 0; i < 2; i++){ this.pioche()}
-            this.piocheup()
+        console.log(data.win)
+        if (data.win === true) {
+          this.element.innerHTML = "GG T'as WIN"
         } else {
+          this.cubeAubergineTarget.style.left = `${4 + 50 * parseInt(data.player.aubergine)}px`
+          this.cubeJambonTarget.style.left = `${4 + 50 * parseInt(data.player.jambon)}px`
+          this.cubeOliveTarget.style.left = `${4 + 50 * parseInt(data.player.olive)}px`
+          this.cubeAnanasTarget.style.left = `${4 + 50 * parseInt(data.player.ananas)}px`
+          this.cubeChampiTarget.style.left = `${4 + 50 * parseInt(data.player.champi)}px`
+          this.cubeChevreTarget.style.left = `${4 + 50 * parseInt(data.player.chevre)}px`
+          this.cubeTomateTarget.style.left = `${4 + 50 * parseInt(data.player.tomate)}px`
+          this.cubeSaladeTarget.style.left = `${4 + 50 * parseInt(data.player.salade)}px`
+          this.pvTarget.innerText = data.player.pv
+          this.roundTarget.innerText = parseInt(this.roundTarget.innerText) + 1
+          this.rerollTarget.innerHTML = `<h2 class="box-title">De côté</h2>`
+          if (parseInt(data.player.aubergine) < 2) {
+              for(let i = 0; i < 3; i++){ this.pioche()}
+          } else if (parseInt(data.player.aubergine) < 5) {
+              for(let i = 0; i < 2; i++){ this.pioche()}
+              this.piocheup()
+          } else {
+              for(let i = 0; i < 3; i++){ this.piocheup()}
+          }
+          if (stats.ananas !== "" && data.player.ananas > 0 && (data.player.ananas - parseInt(stats.ananas)) < 1) {
+            this.piocheup()
+          }
+          if (stats.ananas !== "" && data.player.ananas > 2 && (data.player.ananas - parseInt(stats.ananas)) < 3) {
+            for(let i = 0; i < 2; i++){ this.piocheup()}
+          }
+          if (stats.ananas !== "" && data.player.ananas > 4 && (data.player.ananas - parseInt(stats.ananas)) < 5) {
             for(let i = 0; i < 3; i++){ this.piocheup()}
+          }
+          this.computeAttaque()
         }
-        if (stats.ananas !== "" && data.player.ananas > 0 && (data.player.ananas - parseInt(stats.ananas)) < 1) {
-          this.piocheup()
-        }
-        if (stats.ananas !== "" && data.player.ananas > 2 && (data.player.ananas - parseInt(stats.ananas)) < 3) {
-          for(let i = 0; i < 2; i++){ this.piocheup()}
-        }
-        if (stats.ananas !== "" && data.player.ananas > 4 && (data.player.ananas - parseInt(stats.ananas)) < 5) {
-          for(let i = 0; i < 3; i++){ this.piocheup()}
-        }
-        this.computeAttaque()
       })
       event.currentTarget.reset()
   }

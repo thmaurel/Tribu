@@ -1,4 +1,4 @@
-<% if @player.id %>
+<% if @player.id && @player.pv < 30 %>
   <div class="container" data-controller="play" data-play-player-value="<%= @player.id%>" data-play-stats-value="<%= @attributes.to_json %>">
     <div class="d-flex my-4">
       <div class="round me-4">
@@ -75,7 +75,7 @@
       </div>
     </div>
   </div>
-<% else %>
+<% elsif @player.id.nil? %>
   <div class="container py-5">
     <%= simple_form_for @player do |f| %>
       <div class="d-flex align-items-center name-input">
@@ -84,6 +84,8 @@
       </div>
     <% end %>
   </div>
+<% elsif @player.pv >= 30 %>
+<h1>CHAMPIONNNNNN</h1>
 <% end %>
 
 <style>
