@@ -20,6 +20,7 @@ class PlayersController < ApplicationController
     stats = %w(aubergine jambon olive ananas champi chevre tomate salade attaque)
     @player = Player.find(params[:player])
     @round = Round.new
+    @old_tomate = @player.tomate
     @round.number = @player.rounds.empty? ? 1 : @player.rounds.last.number + 1
     @round.player = @player
     increment_ingredients
@@ -47,6 +48,17 @@ class PlayersController < ApplicationController
 
   def earn_attaque(players)
     @player.attaque = params["attaque"].to_i
+
+    if @old_tomate < 1 && @player.tomate >= 1
+      @player.attaque += 1
+    end
+    if @old_tomate < 3 && @player.tomate >= 3
+      @player.attaque += 1
+    end
+    if @old_tomate < 5 && @player.tomate >= 5
+      @player.attaque += 1
+    end
+
     @round.attaque = params["attaque"].to_i
 
     @player.pv += 1 if @player.attaque > 5
