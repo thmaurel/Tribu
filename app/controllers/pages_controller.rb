@@ -77,10 +77,6 @@ class PagesController < ApplicationController
   end
 
   def compute_attaque2(tuile)
-    if tuile.count { |t| t == "white" } >= 2
-      5
-    else
-      rand(3..4)
-    end
+    tuile.count { |t| t == "white" } >= 2 ? 5 : rand(3..4)
   end
 end
