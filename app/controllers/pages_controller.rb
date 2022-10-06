@@ -49,7 +49,7 @@ class PagesController < ApplicationController
 
   def piocheup
     tuile = [SIDES.sample, SIDES.sample, SIDES.sample]
-    attaque = [compute_attaque(tuile) + 2, 3].max
+    attaque = compute_attaque2(tuile)
     respond_to do |format|
       format.html # Follow regular flow of Rails
       format.text { render partial: "tuile2", locals: { tuile:, attaque:, miror: "" }, formats: [:html] }
@@ -73,6 +73,14 @@ class PagesController < ApplicationController
       3
     else
       10
+    end
+  end
+
+  def compute_attaque2(tuile)
+    if tuile.count { |t| t == "white" } >= 2
+      5
+    else
+      rand(3..4)
     end
   end
 end
